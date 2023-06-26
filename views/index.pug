@@ -1,0 +1,11 @@
+html
+    head
+        title #{title}
+    body
+        ul
+            each val, key in messages
+                li
+                    p #{val.text}
+                    p #{val.user}
+                    p #{val.added}
+

@@ -2,9 +2,28 @@ const express = require('express');
 const router = express.Router();
 
 
+const messages = [
+    {
+        text: "Hi there!",
+        user: "Amando",
+        added: new Date()
+    },
+    {
+        text: "Hello World!",
+        user: "Charles",
+        added: new Date()
+    }
+];
+
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express' });
+    res.render(
+        'index',
+        {
+            title: 'Simple Message Board',
+            messages: messages
+        }
+    );
 });
 
-module.exports = router;
 
+module.exports = router;
