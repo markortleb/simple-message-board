@@ -5,8 +5,12 @@ html
         link(rel="stylesheet" href="/css/style.css")
     body
         form(action="/new" method="POST")
-            span User:
-            input(type="text" name="userName" id="userName")
-
-            button Submit
+            label(for='username') User:
+            input(type="text" name="userName" id="username" required)
+            label(for='message') Message:
+            input(type="text" name="message" id="message" required)
+            div
+                button(class="custom-button") Submit
+                div(class="custom-button")
+                    a(href="/") Go Back
 

@@ -30,11 +30,9 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/new', urlencodedParser, function(req, res, next) {
-    // const userName = req.body.userName;
-
-    console.log(req.body.userName);
-    // const message = req.body.messageText;
-    // messages.push({ text: message, user: userName, added: new Date() });
+    const userName = req.body.userName;
+    const message = req.body.message;
+    messages.push({ text: message, user: userName, added: new Date() });
     res.redirect('/');
 });
 
