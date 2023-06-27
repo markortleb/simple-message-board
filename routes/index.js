@@ -1,6 +1,8 @@
 const express = require('express');
-const router = express.Router();
+const bodyParser = require('body-parser');
 
+const router = express.Router();
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const messages = [
     {
@@ -24,6 +26,16 @@ router.get('/', function(req, res, next) {
         }
     );
     next();
+});
+
+
+router.post('/new', urlencodedParser, function(req, res, next) {
+    // const userName = req.body.userName;
+
+    console.log(req.body.userName);
+    // const message = req.body.messageText;
+    // messages.push({ text: message, user: userName, added: new Date() });
+    res.redirect('/');
 });
 
 

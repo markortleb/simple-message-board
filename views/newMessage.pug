@@ -4,8 +4,9 @@ html
         link(rel="stylesheet" href="/css/meyerweb_reset.css")
         link(rel="stylesheet" href="/css/style.css")
     body
-        //form(action="/new", method="POST")
-        //    p
-        //        | User:
-        //        input(type="text", name="user")
+        form(action="/new" method="POST")
+            span User:
+            input(type="text" name="userName" id="userName")
+
+            button Submit
 
