@@ -5,12 +5,12 @@ const router = express.Router();
 const messages = [
     {
         text: "Hi there!",
-        user: "Amando",
+        user: "Carl",
         added: new Date()
     },
     {
         text: "Hello World!",
-        user: "Charles",
+        user: "Frank",
         added: new Date()
     }
 ];
@@ -23,6 +23,7 @@ router.get('/', function(req, res, next) {
             messages: messages
         }
     );
+    next();
 });
 
 
