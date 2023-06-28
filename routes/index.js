@@ -4,16 +4,20 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+const getDatetime = () => {
+    return (new Date()).toISOString().split('.')[0].replace('T', ' ')
+};
+
 const messages = [
     {
         text: "Hi there!",
         user: "Carl",
-        added: new Date()
+        added: getDatetime()
     },
     {
         text: "Hello World!",
         user: "Frank",
-        added: new Date()
+        added: getDatetime()
     }
 ];
 
@@ -32,7 +36,13 @@ router.get('/', function(req, res, next) {
 router.post('/new', urlencodedParser, function(req, res, next) {
     const userName = req.body.userName;
     const message = req.body.message;
-    messages.push({ text: message, user: userName, added: new Date() });
+    messages.push(
+        {
+            text: message,
+            user: userName,
+            added: getDatetime()
+        }
+    );
     res.redirect('/');
 });
 

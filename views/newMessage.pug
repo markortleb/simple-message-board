@@ -4,12 +4,14 @@ html
         link(rel="stylesheet" href="/css/meyerweb_reset.css")
         link(rel="stylesheet" href="/css/style.css")
     body
+        h1 Simple Message Board
+        h2 Create New Message
         form(action="/new" method="POST")
             label(for='username') User:
             input(type="text" name="userName" id="username" required)
             label(for='message') Message:
-            input(type="text" name="message" id="message" required)
-            div
+            textarea(name="message" id="message" rows=5 required)
+            div(class="button-area")
                 button(class="custom-button") Submit
                 div(class="custom-button")
                     a(href="/") Go Back

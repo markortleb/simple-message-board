@@ -8,9 +8,10 @@ html
         ul(class="messages")
             each val, key in messages
                 li
-                    span #{val.text}
-                    span #{val.user}
-                    span #{val.added}
+                    span(class="message-display") #{val.text}
+                    div(class="from-display")
+                        span(class="user-display") #{val.user}
+                        span(class="date-display") #{val.added}
         div(class="custom-button")
             a(href="/new") Create Message
 
